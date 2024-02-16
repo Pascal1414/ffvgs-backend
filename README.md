@@ -11,7 +11,7 @@ node index.js
 ## Run Local Database
 
 ```
-docker run --name ffvgs-mysql -e  MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=ffvgs -d  mysql:latest
+docker run --name ffvgs-mysql -e  MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=ffvgs -d  mariadb:latest
 ```
 
 Create a `.env` file in the root of the project with the following content:
