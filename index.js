@@ -21,9 +21,9 @@ db.connect((err) => {
 
 app.use(express.json());
 
-app.use("/programms/:id", (req, res, next) => {
+app.use("/programs/:id", (req, res, next) => {
   const { id } = req.params;
-  const sql = "SELECT * FROM Programms WHERE id = ?";
+  const sql = "SELECT * FROM Programs WHERE id = ?";
   db.query(sql, [id], (err, results) => {
     if (err) throw err;
     if (results.length === 0) {
@@ -38,16 +38,16 @@ app.get("/", (req, res) => {
   res.send("This is the backend for ffvgs.ch");
 });
 
-// Programms
+// Programs
 // Create a new program
-app.post("/programms", (req, res) => {
+app.post("/programs", (req, res) => {
   const { name, description } = req.body;
   if (!name || name === null || !description || description === null) {
     return res
       .status(400)
       .json({ message: "Name and description are required" });
   }
-  const sql = "INSERT INTO Programms (name, description) VALUES (?, ?)";
+  const sql = "INSERT INTO Programs (name, description) VALUES (?, ?)";
   db.query(sql, [name, description], (err, result) => {
     if (err) throw err;
     res.json({ message: "Program created successfully", id: result.insertId });
@@ -55,9 +55,9 @@ app.post("/programms", (req, res) => {
 });
 
 // Get all programs
-app.get("/programms", (req, res) => {
+app.get("/programs", (req, res) => {
   const sql =
-    "SELECT p.id, p.name, p.description, d.date FROM Programms as p INNER JOIN Dates as d ON p.id = d.programm_id";
+    "SELECT p.id, p.name, p.description, d.date FROM Programs as p OUTER JOIN Dates as d ON p.id = d.program_id;";
   db.query(sql, (err, results) => {
     if (err) throw err;
     let formattedResults = [];
@@ -81,9 +81,9 @@ app.get("/programms", (req, res) => {
 });
 
 // Get Single program by ID
-app.get("/programms/:id", (req, res) => {
+app.get("/programs/:id", (req, res) => {
   const { id } = req.params;
-  const sql = "SELECT * FROM Programms WHERE id = ?";
+  const sql = "SELECT * FROM Programs WHERE id = ?";
   db.query(sql, [id], (err, result) => {
     if (err) throw err;
     if (result.length > 0) {
@@ -96,7 +96,7 @@ app.get("/programms/:id", (req, res) => {
 });
 
 // Update a program by ID
-app.put("/programms/:id", (req, res) => {
+app.put("/programs/:id", (req, res) => {
   const { name, description } = req.body;
   if (!name || name === null || !description || description === null) {
     return res
@@ -105,7 +105,7 @@ app.put("/programms/:id", (req, res) => {
       .send();
   }
   const { id } = req.params;
-  const sql = "UPDATE Programms SET name = ?, description = ? WHERE id = ?";
+  const sql = "UPDATE Programs SET name = ?, description = ? WHERE id = ?";
   db.query(sql, [name, description, id], (err) => {
     if (err) throw err;
     res.json({ message: "Program updated successfully", id });
@@ -113,9 +113,9 @@ app.put("/programms/:id", (req, res) => {
 });
 
 // Delete a program by ID
-app.delete("/programms/:id", (req, res) => {
+app.delete("/programs/:id", (req, res) => {
   const { id } = req.params;
-  const sql = "DELETE FROM Programms WHERE id = ?";
+  const sql = "DELETE FROM Programs WHERE id = ?";
   db.query(sql, [id], (err) => {
     if (err) throw err;
     res.json({ message: "Program deleted successfully", id });

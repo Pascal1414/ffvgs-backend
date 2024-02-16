@@ -10,10 +10,10 @@ CREATE TABLE `ffvgs`.`users` (
 CREATE TABLE `ffvgs`.`Dates` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `programm_id` INT NOT NULL,
+    `program_id` INT NOT NULL,
     PRIMARY KEY (`id`)
 );
-CREATE TABLE `ffvgs`.`Programms` (
+CREATE TABLE `ffvgs`.`Programs` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(45) NOT NULL,
     `description` TEXT NOT NULL,

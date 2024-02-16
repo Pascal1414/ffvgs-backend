@@ -1,5 +1,5 @@
 USE ffvgs;
-INSERT INTO ffvgs.Programms
+INSERT INTO ffvgs.Programs
 VALUES (
         1,
         "Fischen 1",
@@ -36,7 +36,7 @@ VALUES (
         "Das ist fischen 7"
     );
 
-INSERT INTO Dates (date, programm_id)
+INSERT INTO Dates (date, program_id)
 VALUES (
         "2021-01-01",
         1
