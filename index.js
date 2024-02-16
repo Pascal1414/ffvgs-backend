@@ -57,25 +57,32 @@ app.post("/programs", (req, res) => {
 // Get all programs
 app.get("/programs", (req, res) => {
   const sql =
-    "SELECT p.id, p.name, p.description, d.date FROM Programs as p OUTER JOIN Dates as d ON p.id = d.program_id;";
+    "SELECT p.id, p.name, p.description, d.id as date_id, d.date FROM Programs p LEFT JOIN Dates d ON p.id = d.program_id;";
   db.query(sql, (err, results) => {
     if (err) throw err;
-    let formattedResults = [];
+
+    // Define a map to store formatted results with program IDs as keys
+    let formattedResultsMap = new Map();
+
     results.forEach((result) => {
-      const alreadyAddedItems = formattedResults.filter(
-        (formattedResult) => formattedResult.id === result.id
-      );
-      if (alreadyAddedItems.length === 0) {
-        formattedResults.push({
+      // Check if the program ID already exists in the map
+      if (formattedResultsMap.has(result.id)) {
+        // If it exists, push the date information to the existing program
+        formattedResultsMap.get(result.id).dates.push(result.date);
+      } else {
+        // If it doesn't exist, create a new program entry and initialize dates array
+        formattedResultsMap.set(result.id, {
           id: result.id,
           name: result.name,
           description: result.description,
-          dates: [],
+          dates: [result.date],
         });
-      } else {
-        alreadyAddedItems[0].dates.push(result.date);
       }
     });
+
+    // Convert map values to an array of formatted results
+    let formattedResults = Array.from(formattedResultsMap.values());
+
     res.send(formattedResults);
   });
 });
