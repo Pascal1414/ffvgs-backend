@@ -7,10 +7,15 @@ CREATE TABLE `ffvgs`.`users` (
     `lastLogin` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`)
 );
+CREATE TABLE `ffvgs`.`Date` (
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `programm_id` INT NOT NULL,
+    PRIMARY KEY (`id`)
+);
 CREATE TABLE `ffvgs`.`Programms` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(45) NOT NULL,
     `description` TEXT NOT NULL,
-    `date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`)
 )
