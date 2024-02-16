@@ -35,3 +35,5 @@ VALUES (
         "Fischen 7",
         "Das ist fischen 7"
     )
+INSERT INTO ffvgs.users (username, password)
+VALUES ('admin', 'admin');
