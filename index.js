@@ -1,9 +1,10 @@
 // Imports Express
 const express = require("express");
+const mysql = require('mysql');
+require("dotenv").config();
 
 // Initialize Express app
 const app = express();
-const mysql = require('mysql');
 
 const db = mysql.createConnection({
     host: process.env.DB_HOST,
@@ -11,12 +12,11 @@ const db = mysql.createConnection({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
 });
-console.log(process.env.DB_HOST);
-/*
+
 db.connect((err) => {
     if (err) throw err;
     console.log('Connected to database');
-});*/
+});
 
 // Routes
 app.get("/", (req, res) => {
