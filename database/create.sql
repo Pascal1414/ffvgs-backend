@@ -7,7 +7,7 @@ CREATE TABLE `ffvgs`.`users` (
     `lastLogin` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`)
 );
-CREATE TABLE `ffvgs`.`Date` (
+CREATE TABLE `ffvgs`.`Dates` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `programm_id` INT NOT NULL,
