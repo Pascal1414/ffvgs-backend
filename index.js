@@ -90,15 +90,21 @@ app.get("/programs", (req, res) => {
 // Get Single program by ID
 app.get("/programs/:id", (req, res) => {
   const { id } = req.params;
-  const sql = "SELECT * FROM Programs WHERE id = ?";
+  const sql = "SELECT p.id, p.name, p.description, d.id AS date_id, d.date FROM Programs AS p LEFT JOIN Dates AS d ON p.id = d.program_id WHERE p.id = ?;";
   db.query(sql, [id], (err, result) => {
     if (err) throw err;
-    if (result.length > 0) {
-      res.send(result[0]);
-    } else {
-      res.status(404);
-      res.send("Not found");
-    }
+    // Define a map to store formatted results with program IDs as keys
+    let dates = [];
+    result.forEach((date) => {
+      dates.push(date.date);
+    });
+    let formattedResult = {
+      id: result[0].id,
+      name: result[0].name,
+      description: result[0].description,
+      dates: dates,
+    };
+    res.send(formattedResult);
   });
 });
 
