@@ -56,10 +56,27 @@ app.post("/programms", (req, res) => {
 
 // Get all programs
 app.get("/programms", (req, res) => {
-  const sql = "SELECT * FROM Programms";
+  const sql =
+    "SELECT p.id, p.name, p.description, d.date FROM Programms as p INNER JOIN Dates as d ON p.id = d.programm_id";
   db.query(sql, (err, results) => {
     if (err) throw err;
-    res.json(results);
+    let formattedResults = [];
+    results.forEach((result) => {
+      const alreadyAddedItems = formattedResults.filter(
+        (formattedResult) => formattedResult.id === result.id
+      );
+      if (alreadyAddedItems.length === 0) {
+        formattedResults.push({
+          id: result.id,
+          name: result.name,
+          description: result.description,
+          dates: [],
+        });
+      } else {
+        alreadyAddedItems[0].dates.push(result.date);
+      }
+    });
+    res.send(formattedResults);
   });
 });
 
@@ -81,7 +98,6 @@ app.get("/programms/:id", (req, res) => {
 // Update a program by ID
 app.put("/programms/:id", (req, res) => {
   const { name, description } = req.body;
-  console.log(name, description);
   if (!name || name === null || !description || description === null) {
     return res
       .status(400)
