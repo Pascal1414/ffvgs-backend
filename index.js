@@ -42,6 +42,11 @@ app.get("/", (req, res) => {
 // Create a new program
 app.post("/programms", (req, res) => {
   const { name, description } = req.body;
+  if (!name || name === null || !description || description === null) {
+    return res
+      .status(400)
+      .json({ message: "Name and description are required" });
+  }
   const sql = "INSERT INTO Programms (name, description) VALUES (?, ?)";
   db.query(sql, [name, description], (err, result) => {
     if (err) throw err;
@@ -76,6 +81,13 @@ app.get("/programms/:id", (req, res) => {
 // Update a program by ID
 app.put("/programms/:id", (req, res) => {
   const { name, description } = req.body;
+  console.log(name, description);
+  if (!name || name === null || !description || description === null) {
+    return res
+      .status(400)
+      .json({ message: "Name and description is required for update" })
+      .send();
+  }
   const { id } = req.params;
   const sql = "UPDATE Programms SET name = ?, description = ? WHERE id = ?";
   db.query(sql, [name, description, id], (err) => {
