@@ -15,6 +15,21 @@ Enable all endpoints for the created tables.
 
 Enable all the GET endpoints for the created tables.
 
+## Connect to remote Database
+
+Set the database variables in the .env file.
+
+```
+# Database
+JWT_SECRET=
+DATABASE_CLIENT=
+DATABASE_HOST=
+DATABASE_PORT=
+DATABASE_NAME=
+DATABASE_USERNAME=
+DATABASE_PASSWORD=
+```
+
 # 🚀 Getting started with Strapi
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
