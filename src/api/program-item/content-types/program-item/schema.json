@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "program_items",
+  "info": {
+    "singularName": "program-item",
+    "pluralName": "program-items",
+    "displayName": "ProgramItems"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "program_dates": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::program-date.program-date",
+      "mappedBy": "program_item"
+    }
+  }
+}

@@ -362,6 +362,77 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiProgramDateProgramDate extends Schema.CollectionType {
+  collectionName: 'program_dates';
+  info: {
+    singularName: 'program-date';
+    pluralName: 'program-dates';
+    displayName: 'ProgramDates';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    date: Attribute.Date;
+    program_item: Attribute.Relation<
+      'api::program-date.program-date',
+      'manyToOne',
+      'api::program-item.program-item'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::program-date.program-date',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::program-date.program-date',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProgramItemProgramItem extends Schema.CollectionType {
+  collectionName: 'program_items';
+  info: {
+    singularName: 'program-item';
+    pluralName: 'program-items';
+    displayName: 'ProgramItems';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.Text;
+    program_dates: Attribute.Relation<
+      'api::program-item.program-item',
+      'oneToMany',
+      'api::program-date.program-date'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::program-item.program-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::program-item.program-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -793,6 +864,8 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::program-date.program-date': ApiProgramDateProgramDate;
+      'api::program-item.program-item': ApiProgramItemProgramItem;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
