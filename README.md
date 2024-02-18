@@ -1,3 +1,20 @@
+# FFVGS-Backend
+
+This is the backend app for ffvgs.ch.
+
+## Enable Endpoints
+
+In the admin panel got to
+settings -> roles -> Authenticated / Public
+
+### Authenticated
+
+Enable all endpoints for the created tables.
+
+### Public
+
+Enable all the GET endpoints for the created tables.
+
 # 🚀 Getting started with Strapi
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
