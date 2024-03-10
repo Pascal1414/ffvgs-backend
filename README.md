@@ -21,13 +21,18 @@ Set the database variables in the .env file.
 
 ```
 # Database
-JWT_SECRET=
-DATABASE_CLIENT=
-DATABASE_HOST=
-DATABASE_PORT=
-DATABASE_NAME=
-DATABASE_USERNAME=
-DATABASE_PASSWORD=
+DATABASE_CLIENT=postgres
+DATABASE_URL=<Connection String>
+```
+
+## Strapi .ENV
+
+Extend the .env file with the following variables.
+
+```
+APP_KEYS=
+API_TOKEN_SALT=
+ADMIN_JWT_SECRET=
 ```
 
 # 🚀 Getting started with Strapi
