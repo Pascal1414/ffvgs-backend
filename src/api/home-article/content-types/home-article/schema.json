@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_articles",
+  "info": {
+    "singularName": "home-article",
+    "pluralName": "home-articles",
+    "displayName": "HomeArticles"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Text": {
+      "type": "richtext"
+    },
+    "Images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

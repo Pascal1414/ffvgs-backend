@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vips",
+  "info": {
+    "singularName": "vip",
+    "pluralName": "vips",
+    "displayName": "Vips"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Function": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

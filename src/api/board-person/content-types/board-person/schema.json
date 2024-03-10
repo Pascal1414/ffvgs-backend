@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "board_people",
+  "info": {
+    "singularName": "board-person",
+    "pluralName": "board-people",
+    "displayName": "BoardPerson",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "Function": {
+      "type": "string"
+    },
+    "Tel": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
