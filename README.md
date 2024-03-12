@@ -9,7 +9,7 @@ This is the backend app for ffvgs.ch.
 In the admin panel got to
 `Settings` -> `Users & Permissions plugin` -> `Roles` -> `Public`
 
-Enable all the GET endpoints for the created tables.
+Enable all the GET endpoints for the created tables and the Upload.
 
 ### Connect to remote Database
 
