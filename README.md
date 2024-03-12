@@ -2,20 +2,22 @@
 
 This is the backend app for ffvgs.ch.
 
-## Enable Endpoints
+## Setup Strapi API
+
+### Enable Endpoints
 
 In the admin panel got to
-settings -> roles -> Authenticated / Public
+`settings` -> `roles`
 
-### Authenticated
+#### `Authenticated`
 
 Enable all endpoints for the created tables.
 
-### Public
+#### `Public`
 
 Enable all the GET endpoints for the created tables.
 
-## Connect to remote Database
+### Connect to remote Database
 
 Set the database variables in the .env file.
 
@@ -25,7 +27,7 @@ DATABASE_CLIENT=postgres
 DATABASE_URL=<Connection String>
 ```
 
-## Strapi .ENV
+### Strapi .ENV
 
 Extend the .env file with the following variables.
 
@@ -33,6 +35,8 @@ Extend the .env file with the following variables.
 APP_KEYS=
 API_TOKEN_SALT=
 ADMIN_JWT_SECRET=
+JWT_SECRET=
+TRANSFER_TOKEN_SALT=
 ```
 
 # 🚀 Getting started with Strapi
