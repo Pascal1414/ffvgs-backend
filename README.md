@@ -7,13 +7,7 @@ This is the backend app for ffvgs.ch.
 ### Enable Endpoints
 
 In the admin panel got to
-`settings` -> `roles`
-
-#### `Authenticated`
-
-Enable all endpoints for the created tables.
-
-#### `Public`
+`Settings` -> `Users & Permissions plugin` -> `Roles` -> `Public`
 
 Enable all the GET endpoints for the created tables.
 
