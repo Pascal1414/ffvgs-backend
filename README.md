@@ -33,6 +33,16 @@ JWT_SECRET=
 TRANSFER_TOKEN_SALT=
 ```
 
+### Cloudinary .ENV
+
+Extend the .env file with the following variables.
+
+```
+CLOUDINARY_NAME=
+CLOUDINARY_KEY=
+CLOUDINARY_SECRET=
+```
+
 # 🚀 Getting started with Strapi
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
