@@ -795,10 +795,10 @@ export interface ApiBoardPersonBoardPerson extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Name: Attribute.String;
-    Email: Attribute.Email;
-    Function: Attribute.String;
-    Tel: Attribute.String;
+    name: Attribute.String;
+    email: Attribute.Email;
+    function: Attribute.String;
+    tel: Attribute.String;
     image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -824,13 +824,14 @@ export interface ApiHomeArticleHomeArticle extends Schema.CollectionType {
     singularName: 'home-article';
     pluralName: 'home-articles';
     displayName: 'HomeArticles';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Text: Attribute.RichText;
-    Images: Attribute.Media;
+    text: Attribute.RichText;
+    images: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -855,17 +856,18 @@ export interface ApiProgramProgram extends Schema.CollectionType {
     singularName: 'program';
     pluralName: 'programs';
     displayName: 'Program';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Name: Attribute.String;
+    name: Attribute.String;
     forAll: Attribute.Boolean;
     forJugend: Attribute.Boolean;
     forJunior: Attribute.Boolean;
-    Dates: Attribute.JSON;
-    Description: Attribute.RichText;
+    dates: Attribute.JSON;
+    description: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -890,12 +892,13 @@ export interface ApiReportReport extends Schema.CollectionType {
     singularName: 'report';
     pluralName: 'reports';
     displayName: 'Reports';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Text: Attribute.RichText;
+    text: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -920,14 +923,15 @@ export interface ApiVipVip extends Schema.CollectionType {
     singularName: 'vip';
     pluralName: 'vips';
     displayName: 'Vips';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Name: Attribute.String;
-    Function: Attribute.String;
-    Image: Attribute.Media;
+    name: Attribute.String;
+    function: Attribute.String;
+    image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

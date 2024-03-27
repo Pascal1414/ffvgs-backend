@@ -4,28 +4,30 @@
   "info": {
     "singularName": "vip",
     "pluralName": "vips",
-    "displayName": "Vips"
+    "displayName": "Vips",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string"
     },
-    "Function": {
+    "function": {
       "type": "string"
     },
-    "Image": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

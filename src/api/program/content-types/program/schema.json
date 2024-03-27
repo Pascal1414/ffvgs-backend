@@ -4,14 +4,15 @@
   "info": {
     "singularName": "program",
     "pluralName": "programs",
-    "displayName": "Program"
+    "displayName": "Program",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string"
     },
     "forAll": {
@@ -23,10 +24,10 @@
     "forJunior": {
       "type": "boolean"
     },
-    "Dates": {
+    "dates": {
       "type": "json"
     },
-    "Description": {
+    "description": {
       "type": "richtext"
     }
   }

@@ -4,14 +4,15 @@
   "info": {
     "singularName": "report",
     "pluralName": "reports",
-    "displayName": "Reports"
+    "displayName": "Reports",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Text": {
+    "text": {
       "type": "richtext"
     }
   }
