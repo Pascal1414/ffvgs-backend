@@ -818,6 +818,39 @@ export interface ApiBoardPersonBoardPerson extends Schema.CollectionType {
   };
 }
 
+export interface ApiGaleryGalery extends Schema.CollectionType {
+  collectionName: 'galeries';
+  info: {
+    singularName: 'galery';
+    pluralName: 'galeries';
+    displayName: 'Galery';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    date: Attribute.Date;
+    images: Attribute.Media;
+    name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::galery.galery',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::galery.galery',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomeArticleHomeArticle extends Schema.CollectionType {
   collectionName: 'home_articles';
   info: {
@@ -961,6 +994,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::board-person.board-person': ApiBoardPersonBoardPerson;
+      'api::galery.galery': ApiGaleryGalery;
       'api::home-article.home-article': ApiHomeArticleHomeArticle;
       'api::program.program': ApiProgramProgram;
       'api::report.report': ApiReportReport;
