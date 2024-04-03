@@ -11,6 +11,11 @@ In the admin panel got to
 
 Enable all the GET endpoints for the created tables and the Upload.
 
+### Disable Responsive friendly upload
+
+In the admin panel got to
+`Settings` -> `Global Settings` -> `Media Library` -> `Responsive friendly upload` -> `false`
+
 ### Connect to remote Database
 
 Set the database variables in the .env file.
