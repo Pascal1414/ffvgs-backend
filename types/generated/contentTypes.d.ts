@@ -800,6 +800,7 @@ export interface ApiBoardPersonBoardPerson extends Schema.CollectionType {
     function: Attribute.String;
     tel: Attribute.String;
     image: Attribute.Media;
+    priority: Attribute.Float & Attribute.DefaultTo<1>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -865,6 +866,7 @@ export interface ApiHomeArticleHomeArticle extends Schema.CollectionType {
   attributes: {
     text: Attribute.RichText;
     images: Attribute.Media;
+    priority: Attribute.Float & Attribute.DefaultTo<1>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -965,6 +967,7 @@ export interface ApiVipVip extends Schema.CollectionType {
     name: Attribute.String;
     function: Attribute.String;
     image: Attribute.Media;
+    priority: Attribute.Float & Attribute.DefaultTo<1>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

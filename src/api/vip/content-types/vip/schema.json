@@ -28,6 +28,10 @@
         "videos",
         "audios"
       ]
+    },
+    "priority": {
+      "type": "float",
+      "default": 1
     }
   }
 }

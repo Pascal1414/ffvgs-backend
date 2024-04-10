@@ -31,6 +31,11 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "priority": {
+      "default": 1,
+      "required": false,
+      "type": "float"
     }
   }
 }
