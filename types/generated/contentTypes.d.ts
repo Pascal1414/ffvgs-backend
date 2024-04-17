@@ -819,37 +819,6 @@ export interface ApiBoardPersonBoardPerson extends Schema.CollectionType {
   };
 }
 
-export interface ApiDocumentDocument extends Schema.CollectionType {
-  collectionName: 'documents';
-  info: {
-    singularName: 'document';
-    pluralName: 'documents';
-    displayName: 'Document';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    document: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::document.document',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::document.document',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiGaleryGalery extends Schema.CollectionType {
   collectionName: 'galeries';
   info: {
@@ -1028,7 +997,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::board-person.board-person': ApiBoardPersonBoardPerson;
-      'api::document.document': ApiDocumentDocument;
       'api::galery.galery': ApiGaleryGalery;
       'api::home-article.home-article': ApiHomeArticleHomeArticle;
       'api::program.program': ApiProgramProgram;
