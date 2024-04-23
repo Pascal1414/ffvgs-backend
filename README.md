@@ -4,6 +4,10 @@ This is the backend app for ffvgs.ch.
 
 ## Setup Strapi API
 
+## `.env` file
+
+Dublicate the `.env.example` file, rename it to `.env` and fill in the required values.
+
 ### Enable Endpoints
 
 In the admin panel got to
@@ -11,42 +15,10 @@ In the admin panel got to
 
 Enable all the GET endpoints for the created tables and the Upload.
 
-### Disable Responsive friendly upload
+### Configure Media Library
 
 In the admin panel got to
-`Settings` -> `Global Settings` -> `Media Library` -> `Responsive friendly upload` -> `false`
-
-### Connect to remote Database
-
-Set the database variables in the .env file.
-
-```
-# Database
-DATABASE_CLIENT=postgres
-DATABASE_URL=<Connection String>
-```
-
-### Strapi .ENV
-
-Extend the .env file with the following variables.
-
-```
-APP_KEYS=
-API_TOKEN_SALT=
-ADMIN_JWT_SECRET=
-JWT_SECRET=
-TRANSFER_TOKEN_SALT=
-```
-
-### Cloudinary .ENV
-
-Extend the .env file with the following variables.
-
-```
-CLOUDINARY_NAME=
-CLOUDINARY_KEY=
-CLOUDINARY_SECRET=
-```
+`Settings` -> `Global Settings` -> `Media Library` and set `Responsive friendly upload`, `Size optimization` and `Auto orientation` to `true`.
 
 # 🚀 Getting started with Strapi
 
