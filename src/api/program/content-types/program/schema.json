@@ -18,9 +18,6 @@
     "forAll": {
       "type": "boolean"
     },
-    "forJugend": {
-      "type": "boolean"
-    },
     "forJunior": {
       "type": "boolean"
     },

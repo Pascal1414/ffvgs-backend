@@ -930,7 +930,6 @@ export interface ApiProgramProgram extends Schema.CollectionType {
   attributes: {
     name: Attribute.String;
     forAll: Attribute.Boolean;
-    forJugend: Attribute.Boolean;
     forJunior: Attribute.Boolean;
     dates: Attribute.JSON;
     description: Attribute.RichText;
