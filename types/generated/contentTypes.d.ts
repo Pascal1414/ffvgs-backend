@@ -445,7 +445,6 @@ export interface ApiBoardPersonBoardPerson extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    email: Schema.Attribute.Email;
     function: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -457,7 +456,6 @@ export interface ApiBoardPersonBoardPerson extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     priority: Schema.Attribute.Float & Schema.Attribute.DefaultTo<1>;
     publishedAt: Schema.Attribute.DateTime;
-    tel: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
